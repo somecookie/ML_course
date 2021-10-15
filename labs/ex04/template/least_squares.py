@@ -5,13 +5,14 @@ Least Square
 """
 
 import numpy as np
-
+import costs
 
 def least_squares(y, tx):
-    """calculate the least squares."""
+    """calculate the least squares solution."""
     # ***************************************************
     # INSERT YOUR CODE HERE
     # least squares: TODO
-    # returns optimal weights, MSE
+    # returns mse, and optimal weights
     # ***************************************************
-    raise NotImplementedError
+    w = np.linalg.solve(tx.T@tx, tx.T@y)
+    return costs.compute_mse_loss(y, tx, w), w
