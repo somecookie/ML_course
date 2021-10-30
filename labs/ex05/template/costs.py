@@ -8,7 +8,7 @@ def compute_mse(y, tx, w):
     """
     e = y - np.matmul(tx, w)
     N = len(y)
-    return 1/(2*N)*np.dot(e, e)
+    return 1/(2*N)*(e.T@e)
 
 def compute_rmse(y, tx, w):
     """Calculate the loss.
